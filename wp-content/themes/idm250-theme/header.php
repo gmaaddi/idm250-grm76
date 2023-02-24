@@ -15,7 +15,7 @@
   <input type="checkbox" id="nav-check">
   <div class="nav-header">
     <div class="nav-title">
-      <img src="<?php echo get_template_directory_uri(); ?>/dist/graphics/logo-group.png" class="logo" alt="Logo">
+      <img src="<?php echo get_template_directory_uri(); ?>/dist/graphics/logo-group-bigger.png" class="logo" alt="Logo">
     </div>
   </div>
 
