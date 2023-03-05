@@ -8,45 +8,52 @@
   --tan: #C9BA9E;
 }
 
+/* 63.96px */
 h1 {
   font-weight: 900;
-  font-size: 63.96px;
+  font-size: 3.998rem;
   font-family: 'Merriweather', serif;
 }
 
+/* 49.54px */
 h2 {
   font-weight: 700;
-  font-size: 49.54px;
+  font-size: 3.096rem;
   font-family: 'Merriweather', serif;
 }
 
+/* 38.46px */
 h3 {
   font-weight: 900;
-  font-size: 38.46px;
+  font-size: 2.404rem;
   font-family: 'Merriweather', serif;
 }
 
+/* 29.86px */
 h4 {
   font-weight: 900;
-  font-size: 29.86px;
+  font-size: 1.866rem;
   font-family: 'Merriweather', serif;
 }
 
+/* 23.18px */
 h5 {
   font-weight: 900;
-  font-size: 23.18px;
+  font-size: 1.449rem;
   font-family: 'Merriweather', serif;
 }
 
+/* 18px */
 h6 {
   font-weight: 900;
-  font-size: 18px;
+  font-size: 1.125rem;
   font-family: 'Merriweather', serif;
 }
 
+/* 16px */
 p, li {
-  font-weight: 700;
-  font-size: 16px;
+  font-weight: 300;
+  font-size: 1rem;
   font-family: 'Merriweather', serif;
 }
 
@@ -61,6 +68,7 @@ a {
   
 body {
   margin: 0px;
+  background-color: var(--cream);
 }
   
 .menu-container {
@@ -102,9 +110,10 @@ footer {
   display: none;
 }
   
+/* 23.18px - h5 */
 .menu-links {
   float: right;
-  font-size: 23.18px;
+  font-size: 1.449rem;
 }
   
 .menu-item > a, .menu-item {
@@ -112,6 +121,10 @@ footer {
   padding: 10px;
   text-decoration: none;
   color: var(--green);
+}
+
+.menu-item > a {
+  font-weight: 700;
 }
   
 .menu-item:hover {
@@ -125,7 +138,220 @@ footer {
 .logo {
   height: 28px;
 }
-  
+
+/* SINGLE STYLING */
+.single-header__title {
+  color: var(--green);
+  margin-bottom: 32px;
+}
+
+.single-header__date {
+  color: var(--gray);
+}
+
+.single-header__img {
+  /* width: 200%; */
+  min-height: 608px;
+  margin-bottom: 32px;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.single-wrapper {
+  margin: 64px 96px;
+  display: flex;
+  flex-direction: column;
+}
+
+em {
+  color: var(--gray);
+  font-style: italic;
+}
+
+.single-wrapper > .content-blocks p, h2, h3, h4, h5, h6 {
+  margin-bottom: 32px;
+}
+
+.single-wrapper > .content-blocks h2, h3, h4, h5, h6 {
+  color: var(--green);
+}
+
+.single-wrapper > .content-blocks p {
+  color: var(--gray);
+  margin-bottom: 16px;
+  line-height: 1.5;
+}
+
+.wp-block-image figcaption {
+  margin-bottom: 32px;
+  font-weight: 300;
+  font-size: 14px;
+  font-family: 'Merriweather', serif;
+  color: var(--gray);
+  text-align: center;
+  margin-left: 0;
+  margin-right: 0;
+  margin-top: 16px;
+}
+
+.single-wrapper > .content-blocks > p > a {
+  font-weight: 700;
+}
+
+.wp-block-quote {
+  border-left: 10px solid var(--gold);
+  margin-bottom: 64px;
+  margin-top: 64px;
+  padding: 8px;
+  quotes: "\201C""\201D""\2018""\2019";
+}
+
+.wp-block-quote > div {
+  display: flex;
+  margin-bottom: 8px;
+}
+
+.wp-block-quote > div > h1 {
+  font-weight: 900;
+  font-size: 63.96px;
+  font-family: 'Merriweather', serif;
+  color: var(--gold)
+}
+
+.wp-block-quote > div > h4 {
+  font-weight: 900;
+  font-family: 'Merriweather', serif;
+  color: var(--green);
+  padding-left: 24px;
+  margin-bottom: 16px;
+}
+
+cite {
+  font-weight: 900;
+  font-size: 1.449rem;
+  font-family: 'Merriweather', serif;
+  padding-left: 24px;
+  color: var(--green);
+  font-style: italic;
+  margin-left: 43.3px;
+}
+
+.wp-block-columns {
+  margin-top: 32px;
+}
+
+a {
+  text-decoration: underline;
+  color: var(--green);
+  text-underline-offset: 4px;
+}
+
+h5 > a {
+  line-height: 1.5;
+}
+
+.wp-block-separator {
+  color: var(--gray);
+  margin-bottom: 32px;
+}
+
+/* 23.18px - h5 */
+.wp-block-button > a {
+  background-color: var(--gold);
+  color: var(--green);
+  font-weight: 700;
+  font-family: 'Merriweather', serif;
+  font-size: 1.449rem;
+}
+
+.wp-block-button__link {
+  padding: 16px 24px;
+}
+
+.content-blocks > ul {
+  margin-bottom: 32px;
+  margin-left: 8px;
+}
+
+.content-blocks > ol {
+  margin-bottom: 32px;
+}
+
+ul, ol {
+  line-height: 1.5;
+  margin-bottom: 8px;
+  color: var(--gray);
+}
+
+li {
+  list-style-type: none;
+  position: relative;
+  padding-left: 1rem;
+}
+
+.content-blocks > ul > li:before {
+  content: "❖";
+  font-size: 1rem;
+  position: absolute;
+  left: -8px;
+}
+
+ul > li > ul > li:before {
+  content: "➣";
+  font-size: 1rem;
+  position: absolute;
+  left: -8px;
+}
+
+ul > li > ul > li {
+  margin-left: 8px;
+}
+
+ul > li > ul > li > ul > li:before {
+  content: "☐";
+  font-size: 1rem;
+  position: absolute;
+  left: -8px;
+}
+
+ol {
+	list-style-type: none;
+	counter-reset: li;
+  margin-left: 8px;
+}
+
+ol > li:before {
+  counter-increment: li;
+  content: counter(li);
+  position: absolute;
+  left: -8px;
+}
+
+ol > li > ul > li:before {
+  content: "➣";
+  font-size: 1rem;
+  position: absolute;
+  left: -8px;
+  margin-left: 8px;
+}
+
+ol > li > ul > li {
+  padding-left: 24px;
+}
+
+
+
+
+/* MEDIA QUERIES */
+@media (max-width: 360px) {
+  cite {
+    margin-left: 0;
+  }
+
+  .single-header__img {
+    min-height: 200px;
+  }
+}
 
 @media (max-width:425px) {
   .logo-footer {
@@ -140,6 +366,61 @@ footer {
   }
 }
 
+
+@media (max-width:545px) {
+  .single-wrapper {
+    margin: 64px 64px;
+  }
+
+  /* 49.54px */
+  h1 {
+    font-weight: 700;
+    font-size: 3.096rem;
+    font-family: 'Merriweather', serif;
+  }
+
+  /* 38.46px */
+  h2 {
+    font-weight: 900;
+    font-size: 2.404rem;
+    font-family: 'Merriweather', serif;
+  }
+
+  /* 29.86px */
+  h3 {
+    font-weight: 900;
+    font-size: 1.866rem;
+    font-family: 'Merriweather', serif;
+  }
+
+  /* 23.18px */
+  h4 {
+    font-weight: 900;
+    font-size: 1.449rem;
+    font-family: 'Merriweather', serif;
+  }
+
+  /* 18px */
+  h5 {
+    font-weight: 900;
+    font-size: 1.125rem;
+    font-family: 'Merriweather', serif;
+  }
+
+  /* 16px */
+  h6 {
+    font-weight: 900;
+    font-size: 1rem;
+    font-family: 'Merriweather', serif;
+  }
+}
+
+@media (max-width:630px) {
+  .single-wrapper {
+    margin: 32px;
+  }
+}
+
 @media (max-width:775px) {
   .menu-container {
      padding: 0 24px;
@@ -147,6 +428,7 @@ footer {
 
   .menu-list > .menu-item > a, .menu-item {
     color: white;
+    list-style-type: none;
   }
 
   .menu-list > .menu-item:hover {
@@ -222,3 +504,10 @@ footer {
     flex-direction: column;
   }
 }
+
+@media (max-width:980px) {
+  .single-header__img {
+    min-height: 500px;
+  }
+}
+
