@@ -2,7 +2,7 @@
 <article id="post-<?php the_ID();?>" <?php post_class(); ?>>
 </article>
 
-<div class="single-wrapper">
+<div class="page-wrapper">
     <div class="single-header">
         <h5 class="single-header__date"><?php echo get_the_date() ?></h5>
         <h1 class="single-header__title"><?php echo get_the_title();?></h1>
