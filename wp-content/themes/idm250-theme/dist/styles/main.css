@@ -8,8 +8,8 @@
   --tan: #C9BA9E;
 }
 
-h1, h2, h3, h4, h5, h6, p {
-  line-height: 1.25;
+h1, h2, h3, h4, h5, h6, p, li {
+  line-height: 1.5;
 }
 
 /* 63.96px */
@@ -59,6 +59,7 @@ p, li {
   font-weight: 300;
   font-size: 1rem;
   font-family: 'Merriweather', serif;
+  color: var(--gray);
 }
 
 a {
@@ -172,16 +173,21 @@ em {
   font-style: italic;
 }
 
-.page-wrapper > .content-blocks p, h2, h3, h4, h5, h6 {
+.page-wrapper > .content-blocks p, h2, h3, h4, h5 {
   margin-bottom: 32px;
 }
+
+.page-wrapper > .content-blocks h6 {
+  margin-bottom: 16px;
+}
+
 
 .page-wrapper > .content-blocks h2, h3, h4, h5, h6 {
   color: var(--green);
 }
 
 .page-wrapper > .content-blocks p {
-  color: var(--gray);
+  /* color: var(--gray); */
   margin-bottom: 16px;
 }
 
@@ -200,7 +206,7 @@ em {
 .page-wrapper > .content-blocks > p > a {
   font-weight: 700;
 }
-
+/* 
 .wp-block-quote {
   border-left: 10px solid var(--gold);
   margin-bottom: 64px;
@@ -237,21 +243,23 @@ cite {
   color: var(--green);
   font-style: italic;
   margin-left: 43.3px;
-}
+} */
 
 .wp-block-columns {
   margin-top: 32px;
 }
 
-a {
+p > a {
   text-decoration: underline;
   color: var(--green);
   text-underline-offset: 4px;
 }
 
-/* h5 > a {
-  line-height: 1.5;
-} */
+h5 > a {
+  text-decoration: underline;
+  color: var(--green);
+  text-underline-offset: 8px;
+}
 
 .wp-block-separator {
   color: var(--gray);
@@ -395,6 +403,73 @@ ol > li > ul > li {
   font-weight: 700;
   margin-top: 32px;
 }
+
+figure > figcaption {
+  margin-bottom: 32px;
+  font-weight: 300;
+  font-size: 14px;
+  font-family: 'Merriweather', serif;
+  color: var(--gray);
+  text-align: center;
+  margin-left: 0;
+  margin-right: 0;
+  margin-top: 16px;
+}
+
+strong {
+  font-weight: 700;
+}
+
+table {
+  font-family: 'Merriweather', serif;
+  color: var(--green);
+}
+
+.content-blocks > figure > blockquote > p {
+  color: var(--green);
+}
+
+.wp-block-pullquote {
+  border-left: 10px solid var(--gold);
+  margin-bottom: 64px;
+  margin-top: 64px;
+  padding: 8px;
+  quotes: "\201C""\201D""\2018""\2019";
+}
+
+figure > blockquote > p {
+  font-weight: 900;
+  font-size: 1.866rem;
+  font-family: 'Merriweather', serif;
+  color: var(--green);
+  padding-left: 24px;
+  margin-bottom: 16px;
+}
+
+.wp-block-pullquote > div {
+  display: flex;
+  margin-bottom: 8px;
+}
+
+.wp-block-pullquote > blockquote > p::before {
+  content: "❝";
+  font-weight: 900;
+  font-size: 63.96px;
+  font-family: 'Merriweather', serif;
+  color: var(--gold);
+  margin-right: 24px;
+}
+
+.wp-block-pullquote cite {
+  font-weight: 900;
+  font-size: 1.449rem;
+  font-family: 'Merriweather', serif;
+  padding-left: 24px;
+  color: var(--green);
+  font-style: italic;
+  margin-left: 43.3px;
+}
+
 
 /* MEDIA QUERIES */
 @media (max-width: 360px) {
