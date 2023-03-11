@@ -8,6 +8,10 @@
   --tan: #C9BA9E;
 }
 
+h1, h2, h3, h4, h5, h6, p {
+  line-height: 1.25;
+}
+
 /* 63.96px */
 h1 {
   font-weight: 900;
@@ -157,7 +161,7 @@ footer {
   background-size: cover;
 }
 
-.single-wrapper {
+.page-wrapper {
   margin: 64px 96px;
   display: flex;
   flex-direction: column;
@@ -168,18 +172,17 @@ em {
   font-style: italic;
 }
 
-.single-wrapper > .content-blocks p, h2, h3, h4, h5, h6 {
+.page-wrapper > .content-blocks p, h2, h3, h4, h5, h6 {
   margin-bottom: 32px;
 }
 
-.single-wrapper > .content-blocks h2, h3, h4, h5, h6 {
+.page-wrapper > .content-blocks h2, h3, h4, h5, h6 {
   color: var(--green);
 }
 
-.single-wrapper > .content-blocks p {
+.page-wrapper > .content-blocks p {
   color: var(--gray);
   margin-bottom: 16px;
-  line-height: 1.5;
 }
 
 .wp-block-image figcaption {
@@ -194,7 +197,7 @@ em {
   margin-top: 16px;
 }
 
-.single-wrapper > .content-blocks > p > a {
+.page-wrapper > .content-blocks > p > a {
   font-weight: 700;
 }
 
@@ -246,9 +249,9 @@ a {
   text-underline-offset: 4px;
 }
 
-h5 > a {
+/* h5 > a {
   line-height: 1.5;
-}
+} */
 
 .wp-block-separator {
   color: var(--gray);
@@ -278,7 +281,7 @@ h5 > a {
 }
 
 ul, ol {
-  line-height: 1.5;
+  /* line-height: 1.5; */
   margin-bottom: 8px;
   color: var(--gray);
 }
@@ -339,8 +342,59 @@ ol > li > ul > li {
   padding-left: 24px;
 }
 
+/* PAGE.PHP STYLES */
+.cta-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 64px;
+  margin-top: 64px;
+}
 
+.cta-heading {
+  color: var(--gold);
+  text-align: center;
+}
 
+.cta-description {
+  color: white;
+  font-weight: 400;
+  text-align: center;
+}
+
+.cta-btn {
+  background-color: var(--gold);
+  color: var(--green);
+  text-decoration: none;
+  border-radius: 30px;
+  padding: 16px 24px;
+  font-weight: 700;
+  font-family: 'Merriweather', serif;
+  font-size: 1.449rem;
+}
+
+.page-header-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 64px 96px;
+}
+
+.page-header-img {
+  width: 100%;
+}
+
+.page-header-heading, .page-header-description {
+  color: white;
+  text-align: center;
+}
+
+.page-header-description {
+  font-weight: 700;
+  margin-top: 32px;
+}
 
 /* MEDIA QUERIES */
 @media (max-width: 360px) {
@@ -368,7 +422,7 @@ ol > li > ul > li {
 
 
 @media (max-width:545px) {
-  .single-wrapper {
+  .page-wrapper {
     margin: 64px 64px;
   }
 
@@ -416,7 +470,7 @@ ol > li > ul > li {
 }
 
 @media (max-width:630px) {
-  .single-wrapper {
+  .page-wrapper {
     margin: 32px;
   }
 }
