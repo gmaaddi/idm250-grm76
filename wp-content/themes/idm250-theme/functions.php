@@ -63,3 +63,60 @@ function register_theme_menus()
 }
 
 add_action('init', 'register_theme_menus');
+
+
+// Sidebar registering
+function register_theme_sidebars()
+{
+    register_sidebar([
+        'name' => 'Page Sidebar',
+        'id' => 'page-sidebar',
+    ]);
+}
+add_action('widgets_init', 'register_theme_sidebars');
+
+// For Archive Page
+function remove_archive_title_prefix($title)
+{
+    if (is_category()) {
+        $title = single_cat_title('', false);
+    } elseif (is_tag()) {
+        $title = single_tag_title('', false);
+    } elseif (is_author()) {
+        $title = '<span class="vcard">' . get_the_author() . '</span>';
+    } elseif (is_post_type_archive()) {
+        $title = post_type_archive_title('', false);
+    } elseif (is_tax()) {
+        $title = single_term_title('', false);
+    }
+    return $title;
+}
+add_filter('get_the_archive_title', 'remove_archive_title_prefix');
+
+// Advanced Custom Fields
+function my_acf_json_save_point($path)
+{
+    // update path
+    $path = get_stylesheet_directory() . '/acf';
+
+    // return
+    return $path;
+}
+add_filter('acf/settings/save_json', 'my_acf_json_save_point');
+
+
+function my_acf_json_load_point( $paths ) {
+    
+    // remove original path (optional)
+    unset($paths[0]);
+    
+    
+    // append path
+    $paths[] = get_stylesheet_directory() . '/acf';
+    
+    
+    // return
+    return $paths;
+    
+}
+add_filter('acf/settings/load_json', 'my_acf_json_load_point');
