@@ -66,14 +66,23 @@ add_action('init', 'register_theme_menus');
 
 
 // Sidebar registering
-function register_theme_sidebars()
+// function register_theme_sidebars()
+// {
+//     register_sidebar([
+//         'name' => 'Page Sidebar',
+//         'id' => 'page-sidebar',
+//     ]);
+// }
+// add_action('widgets_init', 'register_theme_sidebars');
+
+function register_theme_columns()
 {
     register_sidebar([
-        'name' => 'Page Sidebar',
-        'id' => 'page-sidebar',
+        'name' => 'Columns',
+        'id' => 'columns',
     ]);
 }
-add_action('widgets_init', 'register_theme_sidebars');
+add_action('widgets_init', 'register_theme_columns');
 
 // For Archive Page
 function remove_archive_title_prefix($title)
