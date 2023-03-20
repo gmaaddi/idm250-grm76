@@ -509,22 +509,22 @@ figure > blockquote > p {
   display: flex;
 }
 
-.two-column-container > .left-column > img {
+.two-column-container > .image-column > img {
   max-width: 100%;
   height: auto;
 }
 
-.left-column, .right-column {
+.image-column, .text-column {
   flex-basis: 50%;
 }
 
-.left-column {
+.image-column {
   background-position: bottom;
   background-repeat: no-repeat;
   margin: 0;
 }
 
-.right-column {
+.text-column {
   padding-left: 24px;
   padding-right: 96px;
   margin-top: 64px;
@@ -665,102 +665,113 @@ figure > blockquote > p {
   margin-left: 32px;
 }
 
-/* MEDIA QUERIES */
-@media (max-width: 360px) {
-  cite {
-    margin-left: 0;
-  }
+.two-column-home-container {
+  display: flex;
+}
 
-  .single-header__img {
-    min-height: 200px;
+.column-1-home {
+  padding-left: 96px;
+  padding-right: 96px;
+}
+
+.column_1_primary_title {
+  color: var(--green);
+  margin-bottom: 16px;
+}
+
+.column_1_top_title {
+  margin-bottom: 0;
+}
+
+.column_1_description {
+  color: var(--gray);
+  font-weight: 600;
+}
+
+.column_1_link_container {
+  margin-top: 16px;
+  display: flex;
+}
+
+.column-2-home {
+  background-position: center;
+}
+
+
+/* MEDIA QUERIES */
+/* ARRANGED HIGH TO LOW */
+@media (max-width:1050px) {
+  .color-block-column1 {
+    padding-right: 32px;
   }
 }
 
-@media (max-width:425px) {
-  .logo-footer {
-    height: 32px;
+@media (max-width:985px) {
+  .two-column-container {
+    flex-direction: column;
+  }
+  
+  .image-column {
+    margin: 0;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 500px;
   }
 
-  .menu-list__footer > .menu-item {
-    display: flex;
+  .image-column {
+    flex-basis: auto;
+  }
+
+  .text-column {
+    padding-right: 24px;
+  }
+
+  .column-1-home {
+    padding-left: 96px;
+    padding-right: 96px;
+  }
+
+  .column-2-home {
+    height: 600px;
+    background-position: center;
+  }
+}
+
+@media (max-width:980px) {
+  .single-header__img {
+    min-height: 500px;
+  }
+
+  .color-block-container {
     flex-direction: column;
+  }
+
+  .color-block-column1, .color-block-column2 {
+    padding-right: 32px;
+    padding-left: 32px;
+  }
+
+  .color-block-column2 {
+    display: flex;
+    align-items: center;
     justify-content: center;
+    padding-top: 32px;
+  }
+}
+
+@media (max-width:805px) {
+  .three-column-wrapper {
+    flex-direction: column;
     align-items: center;
   }
 
-  .page-header-container {
-    padding: 64px 32px;
+  .color-column-1, .color-column-3 {
+    margin: 0;
   }
 
-  .cta-container {
-    padding: 64px 32px;
-  }
-
-  .custom-404-title, .custom-404-description {
-    margin-left: 32px;
-    margin-right: 32px;
-  }
-}
-
-@media (max-width:545px) {
-  .page-wrapper {
-    margin: 64px 64px;
-  }
-
-  /* 49.54px */
-  h1 {
-    font-weight: 700;
-    font-size: 3.096rem;
-    font-family: 'Merriweather', serif;
-  }
-
-  /* 38.46px */
-  h2 {
-    font-weight: 900;
-    font-size: 2.404rem;
-    font-family: 'Merriweather', serif;
-  }
-
-  /* 29.86px */
-  h3 {
-    font-weight: 900;
-    font-size: 1.866rem;
-    font-family: 'Merriweather', serif;
-  }
-
-  /* 23.18px */
-  h4 {
-    font-weight: 900;
-    font-size: 1.449rem;
-    font-family: 'Merriweather', serif;
-  }
-
-  /* 18px */
-  h5 {
-    font-weight: 900;
-    font-size: 1.125rem;
-    font-family: 'Merriweather', serif;
-  }
-
-  /* 16px */
-  h6 {
-    font-weight: 900;
-    font-size: 1rem;
-    font-family: 'Merriweather', serif;
-  }
-
-  .subcolumn {
-    flex-direction: column;
-  }
-
-  .subcolumn-left {
+  .color-column-2 {
+    margin-top: 32px;
     margin-bottom: 32px;
-  }
-}
-
-@media (max-width:630px) {
-  .page-wrapper {
-    margin: 32px;
   }
 }
 
@@ -848,69 +859,107 @@ figure > blockquote > p {
   }
 }
 
-@media (max-width:805px) {
-  .three-column-wrapper {
+@media (max-width:630px) {
+  .page-wrapper {
+    margin: 32px;
+  }
+}
+
+@media (max-width:545px) {
+  .page-wrapper {
+    margin: 64px 64px;
+  }
+
+  /* 49.54px */
+  h1 {
+    font-weight: 700;
+    font-size: 3.096rem;
+    font-family: 'Merriweather', serif;
+  }
+
+  /* 38.46px */
+  h2 {
+    font-weight: 900;
+    font-size: 2.404rem;
+    font-family: 'Merriweather', serif;
+  }
+
+  /* 29.86px */
+  h3 {
+    font-weight: 900;
+    font-size: 1.866rem;
+    font-family: 'Merriweather', serif;
+  }
+
+  /* 23.18px */
+  h4 {
+    font-weight: 900;
+    font-size: 1.449rem;
+    font-family: 'Merriweather', serif;
+  }
+
+  /* 18px */
+  h5 {
+    font-weight: 900;
+    font-size: 1.125rem;
+    font-family: 'Merriweather', serif;
+  }
+
+  /* 16px */
+  h6 {
+    font-weight: 900;
+    font-size: 1rem;
+    font-family: 'Merriweather', serif;
+  }
+
+  .subcolumn {
     flex-direction: column;
-    align-items: center;
   }
 
-  .color-column-1, .color-column-3 {
-    margin: 0;
-  }
-
-  .color-column-2 {
-    margin-top: 32px;
+  .subcolumn-left {
     margin-bottom: 32px;
   }
-}
 
-@media (max-width:980px) {
-  .single-header__img {
-    min-height: 500px;
-  }
-
-  .color-block-container {
-    flex-direction: column;
-  }
-
-  .color-block-column1, .color-block-column2 {
-    padding-right: 32px;
+  .column-1-home {
     padding-left: 32px;
-  }
-
-  .color-block-column2 {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding-top: 32px;
-  }
-
-
-}
-
-@media (max-width:985px) {
-  .two-column-container {
-    flex-direction: column;
-  }
-  
-  .left-column {
-    background-position: bottom;
-    margin: 0;
-    height: 900px;
-    background-repeat: no-repeat;
-  }
-
-  .left-column {
-    flex-basis: auto;
-  }
-
-  .right-column {
-    padding-right: 24px;
-  }
-}
-
-@media (max-width:1050px) {
-  .color-block-column1 {
     padding-right: 32px;
+  }
+}
+
+
+@media (max-width:425px) {
+
+  .logo-footer {
+    height: 32px;
+  }
+
+  .menu-list__footer > .menu-item {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .page-header-container {
+    padding: 64px 32px;
+  }
+
+  .cta-container {
+    padding: 64px 32px;
+  }
+
+  .custom-404-title, .custom-404-description {
+    margin-left: 32px;
+    margin-right: 32px;
+  }
+}
+
+@media (max-width: 360px) {
+  cite {
+    margin-left: 0;
+  }
+
+  .single-header__img {
+    min-height: 200px;
   }
 }
