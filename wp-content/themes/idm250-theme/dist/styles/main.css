@@ -596,7 +596,74 @@ figure > blockquote > p {
   margin-top: 16px;
 }
 
+/* FRONT PAGE STYLES */
+.home-hero-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  min-height: 672px;
+  background-repeat: no-repeat;
+  text-align: center;
+}
 
+.home-hero-wrapper {
+  margin: auto 32px;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+}
+
+.hero_school_title {
+  color: white;
+}
+
+.hero_school_description {
+  color: white;
+  font-weight: 600;
+}
+
+.centered_title {
+  text-align: center;
+  color: white;
+  margin: 64px 32px 32px 32px;
+}
+
+.column_icon_description {
+  color: white;
+  margin-top: 16px;
+  max-width: 272px;
+}
+
+.three-column-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.three-column-wrapper {
+  display: flex;
+  justify-content: space-around;
+  margin: auto 96px;
+  align-items: flex-start;
+  margin-bottom: 64px;
+}
+
+.color-column {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+}
+
+.color-column-1 {
+  margin-right: 32px;
+}
+
+.color-column-3 {
+  margin-left: 32px;
+}
 
 /* MEDIA QUERIES */
 @media (max-width: 360px) {
@@ -778,6 +845,22 @@ figure > blockquote > p {
   .menu-links {
     display: flex;
     flex-direction: column;
+  }
+}
+
+@media (max-width:805px) {
+  .three-column-wrapper {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .color-column-1, .color-column-3 {
+    margin: 0;
+  }
+
+  .color-column-2 {
+    margin-top: 32px;
+    margin-bottom: 32px;
   }
 }
 
