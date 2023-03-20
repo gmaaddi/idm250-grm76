@@ -7,7 +7,7 @@ Template Name: Columns
 <?php get_header() ?>
 
 <div class="two-column-container">
-    <div class="left-column" style="background-image: url('<?php echo get_field('left_column_image')['url']; ?>');">
+    <div class="image-column" style="background-image: url('<?php echo get_field('left_column_image')['url']; ?>');">
         <!-- <?php 
         $image = get_field('left_column_image');
         if( !empty( $image ) ): ?>
@@ -15,7 +15,7 @@ Template Name: Columns
         <?php endif; ?> -->
     </div>
 
-    <div class="right-column">
+    <div class="text-column">
         <h5 class="right_column_top_title"><?php the_field('right_column_top_title'); ?></h5>
         <h2 class="right_column_title"><?php the_field('right_column_title'); ?></h2>
         <p class="right_column_paragraph"><?php the_field('right_column_paragraph'); ?></p>
