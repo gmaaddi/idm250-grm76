@@ -82,7 +82,42 @@
     </div>
 </div>
 
+<div class="home-blogs-container">
+    <?php get_template_part('components/content'); ?>
 
-<?php get_template_part('components/content'); ?>
+    <div class="home-blogs-wrapper">
+        <?php
+            $args = array(
+                'post_type' => 'post',
+                'post_status' => 'publish',
+                'posts_per_page' => 3,
+            );
+
+        $recent_posts = new WP_Query($args);
+
+        if ($recent_posts->have_posts()) :
+        while ($recent_posts->have_posts()) :
+        $recent_posts->the_post(); ?>
+
+        <a href="<?php the_permalink(); ?>">
+        <div class="blog-card">
+            <?php if (has_post_thumbnail()) : ?>
+                <?php the_post_thumbnail('card-thumbnail'); ?>
+            <?php endif; ?>
+                <h5 class="blog-card-title">
+                    <?php the_title(); ?>
+                </h5>
+
+                <p class="blog-card-excerpt">
+                    <?php the_excerpt(); ?>
+                </p>
+        </div>
+        </a>
+
+        <?php endwhile;
+            wp_reset_postdata(); ?>
+        <?php endif; ?>
+    </div>
+</div>
 
 <?php get_footer() ?>
