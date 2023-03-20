@@ -57,6 +57,31 @@
             <h4 class="column_icon_description"><?php the_field('column_3_icon_description'); ?></h4>
         </div>
     </div>
+</div>
+
+<div class="two-column-home-container two-column-container">
+    <div class="column-1-home text-column">
+        <h3 class="column_1_top_title"><?php the_field('column_1_top_title'); ?></h3>
+        <h1 class="column_1_primary_title"><?php the_field('column_1_primary_title'); ?></h1>
+        <h5 class="column_1_description"><?php the_field('column_1_description'); ?></h5>
+
+        <div class="column_1_link_container">
+        <?php 
+            $link = get_field('column_1_link');
+            if( $link ): 
+                $link_url = $link['url'];
+                $link_title = $link['title'];
+                $link_target = $link['target'] ? $link['target'] : '_self';
+                ?>
+                <a class="cta-btn" href="<?php echo esc_url( $link_url ); ?>" target="<?php echo esc_attr( $link_target ); ?>"><?php echo esc_html( $link_title ); ?></a>
+        <?php endif; ?>
+        </div>
+    </div>
+
+    <div class="column-2-home image-column" style="background-image: url('<?php echo get_field('column_2_image')['url']; ?>');">
+    </div>
+</div>
+
 
 <?php get_template_part('components/content'); ?>
 
