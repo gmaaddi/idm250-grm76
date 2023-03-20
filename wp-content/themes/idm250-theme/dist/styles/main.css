@@ -52,6 +52,7 @@ h6 {
   font-weight: 900;
   font-size: 1.125rem;
   font-family: 'Merriweather', serif;
+  text-transform: uppercase;
 }
 
 /* 16px */
@@ -695,6 +696,57 @@ figure > blockquote > p {
 
 .column-2-home {
   background-position: center;
+}
+
+.home-blogs-container {
+  background-color: var(--green);
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  padding: 64px 96px 32px;
+  flex-direction: column;
+}
+
+.home-blogs-container > .content-blocks > h4 {
+  color: var(--gold);
+  font-weight: 600;
+  margin: 0;
+}
+
+.home-blogs-container > .content-blocks > h2 {
+  color: white;
+  font-weight: 500;
+}
+
+.home-blogs-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+
+.blog-card {
+  padding: 32px;
+  background-color: white;
+  width: 347px;
+  display: flex;
+  text-align: left;
+  flex-direction: column;
+  margin: auto 16px 32px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.blog-card img {
+  max-height: 288px;
+  max-width: 288px;
+  object-fit: cover;
+  margin-bottom: 16px;
+}
+
+.blog-card-title {
+  margin-top: 10px;
+  margin-bottom: 16px;
 }
 
 
