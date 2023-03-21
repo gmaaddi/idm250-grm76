@@ -5,8 +5,6 @@
     <h5 class="page-header-description"><?php the_field('page_header_description'); ?></h5>
 </div>
 
-
-
 <div class="page-wrapper">
     <?php get_template_part('components/content'); ?>
 
