@@ -8,11 +8,6 @@ Template Name: Columns
 
 <div class="two-column-container">
     <div class="image-column" style="background-image: url('<?php echo get_field('left_column_image')['url']; ?>');">
-        <!-- <?php 
-        $image = get_field('left_column_image');
-        if( !empty( $image ) ): ?>
-            <img src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" />
-        <?php endif; ?> -->
     </div>
 
     <div class="text-column">
@@ -62,21 +57,5 @@ Template Name: Columns
 <div class="page-wrapper sidebar-wrapper">
     <?php get_template_part('components/content'); ?>
 </div>
-
-
-
-<!-- <div class="two-column-container">
-    <div class="left">
-        <?php the_post_thumbnail(); ?>
-    </div>
-
-    <div class="right">
-        <?php get_template_part('components/content'); ?>
-    </div>
-</div> -->
-
-<!-- <h1><?php echo get_the_title();?></h1>
-<?php echo get_the_excerpt();?></div>
-<?php get_template_part('components/content'); ?> -->
 
 <?php get_footer() ?>
