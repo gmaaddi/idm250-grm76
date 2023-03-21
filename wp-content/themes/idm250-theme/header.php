@@ -4,7 +4,15 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="icon" href="<?php echo get_stylesheet_directory_uri(); ?>/dist/graphics/favicon.ico" type="image/x-icon">
+
+  <!-- ACF Favicon -->
+  <?php
+    $favicon_image = get_field('favicon', 'options');
+    if ($favicon_image) {
+      echo '<link rel="icon" href="' . get_template_directory_uri() . '/dist/graphics/favicon.png" type="image/png">';
+    }
+  ?>
+  
   <title><?php bloginfo('name'); ?><?php wp_title(); ?></title>
   <?php wp_head();?>
 </head>
@@ -16,7 +24,12 @@
   <div class="nav-header">
     <div class="nav-title">
       <a href="<?php echo site_url(); ?>/index.php">
-        <img src="<?php echo get_template_directory_uri(); ?>/dist/graphics/logo-group-bigger.png" class="logo" alt="Logo">
+        <?php 
+          $logo = get_field('logo', 'option');
+          if($logo) {
+          echo '<img class="logo" src="' . $logo['url'] . '" alt="' . $logo['alt'] . '">';
+          }
+        ?>
       </a>
     </div>
   </div>
