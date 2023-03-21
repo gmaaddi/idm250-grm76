@@ -22,7 +22,7 @@ function theme_scripts_and_styles()
     // Load in Google Fonts
     wp_enqueue_style(
         'google-fonts',
-        'https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap',
+        'https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap',
         [],
         null
     );
@@ -64,17 +64,7 @@ function register_theme_menus()
 
 add_action('init', 'register_theme_menus');
 
-
-// Sidebar registering
-// function register_theme_sidebars()
-// {
-//     register_sidebar([
-//         'name' => 'Page Sidebar',
-//         'id' => 'page-sidebar',
-//     ]);
-// }
-// add_action('widgets_init', 'register_theme_sidebars');
-
+// Alternate Template
 function register_theme_columns()
 {
     register_sidebar([
@@ -130,22 +120,26 @@ function my_acf_json_load_point( $paths ) {
 }
 add_filter('acf/settings/load_json', 'my_acf_json_load_point');
 
-// ACF 404
 if( function_exists('acf_add_options_page') ) {
     acf_add_options_page(array(
-      'page_title' => '404 Page Content',
-      'menu_title' => '404 Page Content',
-      'menu_slug' => '404-page-content',
-      'capability' => 'edit_posts',
-      'redirect' => false
+        'page_title' => 'Theme Options',
+        'menu_title' => 'Theme Options',
+        'menu_slug' => 'theme-options',
+        'capability' => 'edit_posts',
+        'redirect' => false
     ));
 }
 
 function custom_404_template($template) {
     global $wp_query;
     if( $wp_query->is_404 ) {
-      $template = get_template_directory() . '/404.php';
+        $custom_404_page = get_field('custom_404_page', 'options');
+        if (isset($custom_404_page) && !empty($custom_404_page)) {
+            $template = get_page_template_slug($custom_404_page);
+        } else {
+            $template = get_template_directory() . '/404.php';
+        }
     }
     return $template;
-  }
-  add_filter( '404_template', 'custom_404_template' );
+}
+add_filter( '404_template', 'custom_404_template' );
