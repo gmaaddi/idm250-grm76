@@ -3,7 +3,12 @@
 
 <footer>
 <a href="<?php echo site_url(); ?>/index.php">
-  <img src="<?php echo get_template_directory_uri(); ?>/dist/graphics/logo-group-bigger.png" class=" logo-footer" alt="Logo">
+  <?php 
+    $logo = get_field('logo', 'option');
+    if($logo) {
+    echo '<img class="logo-footer" src="' . $logo['url'] . '" alt="' . $logo['alt'] . '">';
+    }
+  ?>
 </a>
 
 <?php
@@ -17,7 +22,19 @@
       );
     ?>
 
-<p class="footer-text">&copy; <?php echo date('Y'); ?> <?php bloginfo('name'); ?></p>
+<p class="footer-text">
+    &copy; <?php echo date('Y'); ?> 
+    
+    <?php bloginfo('name'); ?>
+    .
+  <?php
+    $footer_text = get_field('footer_text', 'options');
+    if($footer_text) {
+    echo $footer_text;
+  }
+  ?>
+</p>
+
 </div>
 </footer>
 
